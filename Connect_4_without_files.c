@@ -9,12 +9,12 @@ enum bool{ False, True };
 
 enum winner{ O = -1, Tie = 0, X = 1, PLAY = 2};
 
-int max(int a, int b)
+int maximum(int a, int b)
 {
     return a>b ? a : b;
 }
 
-int min(int a, int b)
+int minimum(int a, int b)
 {
     return a<b ? a : b;
 }
@@ -154,7 +154,7 @@ int evaluate_move(char board[ROWS][COLS], int depth, int player)
                 if (board[i][j] == ' ')
                 {
                     board[i][j] = 'O';
-                    val = max(evaluate_move(board, depth - 1, 0), val);
+                    val = maximum(evaluate_move(board, depth - 1, 0), val);
                     board[i][j] = ' ';
                     break;
                 }
@@ -172,7 +172,7 @@ int evaluate_move(char board[ROWS][COLS], int depth, int player)
                 if (board[i][j] == ' ')
                 {
                     board[i][j] = 'X';
-                    val = min(evaluate_move(board, depth - 1, 1),val);
+                    val = minimum(evaluate_move(board, depth - 1, 1),val);
                     board[i][j] = ' ';
                     break;
                 }
