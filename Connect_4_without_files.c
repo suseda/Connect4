@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int ROWS,COLS;
+#define ROWS 6
+#define COLS 7
 
 enum bool{ False, True };
 
@@ -209,13 +210,13 @@ int find_best_move(char board[ROWS][COLS], int depth)
 
 int main()
 {
-    do
+    /*do
     {
         puts("Enter number of rows:");
         scanf("%d", &ROWS);
         puts("Enter number of coloums:");
         scanf("%d", &COLS);
-    }while(ROWS < 3 || ROWS > 20 || COLS < 3 || COLS > 40 );
+    }while(ROWS < 3 || ROWS > 20 || COLS < 3 || COLS > 40 );*/
     
     char board[ROWS][COLS];
     for (int i = 0; i < ROWS; i++)
