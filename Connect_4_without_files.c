@@ -353,7 +353,7 @@ int main()
                 }
                 else
                 {
-                    position = find_best_move(board, 3);
+                    position = find_best_move(board, 6);
                 }
 
                 for (int row = ROWS - 1; row >= 0; row--)
