@@ -2,8 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ROWS 4
-#define COLS 4
+int ROWS,COLS;
 
 enum bool{ False, True };
 
@@ -210,6 +209,14 @@ int find_best_move(char board[ROWS][COLS], int depth)
 
 int main()
 {
+    do
+    {
+        puts("Enter number of rows:");
+        scanf("%d", &ROWS);
+        puts("Enter number of coloums:");
+        scanf("%d", &COLS);
+    }while(ROWS < 3 || ROWS > 20 || COLS < 3 || COLS > 40 );
+    
     char board[ROWS][COLS];
     for (int i = 0; i < ROWS; i++)
     {
@@ -218,8 +225,15 @@ int main()
             board[i][j] = ' ';
         }
     }
-
-    int mode = 0, turns = 0, flag = 1;
+    
+    int mode;
+    do
+    {
+        printf("Enter mode (1 - two players, 0 - singleplayer):");
+        scanf("%d", &mode);
+    }while(mode!=1 && mode!=0);
+    
+    int turns = 0, flag = 1;
     if (mode)
     {
         while (ROWS * COLS > turns && !(check_win(board)))
@@ -368,6 +382,9 @@ int main()
                 printf("Player wins in %d turns!", turns);
         }
     }
+
+    return 0;
+}
 
     return 0;
 }
